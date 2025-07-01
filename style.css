@@ -1,0 +1,443 @@
+/* imp! css reset */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 10px ;
+    scroll-behavior: smooth;
+}
+/* imp! css varaible declaration */
+
+:root{
+    --dark-black:black;
+    --pure-white: white;
+    --sky-blue:blue;
+    --grey: grey;
+    --h1-font: 7rem;
+    --h2-font: 3.2rem;
+    --h3-font: 2.8rem;
+    --h4-font: 2.4rem;
+    --font-20px:2rem;
+    --h5-font:1.8rem;
+    --p-font: 1.6rem;
+    --font-segoe-UI:'segoe UI';
+
+}
+/* imp! body and common css*/
+ 
+body{
+    font-family: 'poppins';
+ }
+ .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6{
+    margin-bottom: 0;
+ }
+ .dark-black{
+    background-color: var(--dark-black);
+ }
+ .dark-black-text{
+    color: var(--dark-black);
+ }
+ .fw-600{
+    font-weight: 600;
+ }
+ .grey-clr{
+    color: var(--grey);
+ }
+ h1{
+    font-size: var(--h1-font);
+ }
+ h2{
+    font-size: var(--h2-font);
+ }
+ h3{
+     font-size: var(--h3-font);
+ }
+ h4{
+     font-size: var(--h4-font);
+ }
+ h5{
+     font-size: var(--h5-font);
+ }
+ p,.p-font-size{
+    font-size: var(--p-font);
+ }
+ .segoe-font{
+    font-size: var(--font-segoe-UI);
+ }
+ .mt-100{
+    margin-top: 10rem;
+ }
+
+/* imp! section-1 (navbar section) */
+ 
+.nav-link{
+   font-size: var(--p-font);
+   padding: 1rem 0.2rem;
+   position: relative;
+ }
+.nav-link::before{
+   content: '';
+   position: absolute;
+   width: 0%;
+   height: 0.15rem;
+   background-color: var(--pure-white);
+   bottom: 0.2rem;
+   left: 0;
+   visibility: hidden;
+   text-align: center;
+   transition: all 0.3s ease-in-out;
+}
+
+.nav-link:hover::before,
+.nav-link.active::before{
+   width: 100%;
+   visibility: visible;
+}
+.navbar-toggler .fa-solid.fa-bars{
+   font-size: 2rem;
+}
+
+/* imp! section-2 (hero-section) */
+
+.hero-section{
+   background-image:url(image/praveenbabu_image3.jpg);
+   background-color: var(--dark-black);
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position: -5rem;
+   z-index: 1;
+
+}
+
+.hero-section-overlay{
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   background: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.9));
+   z-index: -1;
+}
+
+.hero-section .container{
+   height: 86vh;
+}
+
+/* imp! section-3 (about-section) */
+ 
+.about-section{
+   padding: 5rem 0;
+   
+}
+.about-section .container{
+   box-shadow: 0 0.2rem 1.5rem rgba(0,0,0,0.1);
+   padding: 3rem;
+   
+}
+.skills-main-div .skill-div span{
+   font-size: 1.3rem;
+}
+.blue-line{
+   width: 5rem;
+   height: 0.3rem;
+   background-color: var(--sky-blue);
+   border-radius: 1rem;
+   margin: 1.5rem 0;
+}
+
+.mobile-big-desktop-small{
+   font-size: 20px;
+ }
+ @media(min-width:768px){
+   .mobile-big-desktop-small{
+      font-size: 13px;
+   }
+ }
+/* imp! section-4 (resume section) */
+
+.resume-item{
+   position: relative;
+   border-left: 0.2rem solid var(--sky-blue);
+}
+
+.resume-item::before{
+   content: '';
+   position: absolute;
+   width: 1.6rem;
+   height: 1.6rem;
+   border-radius: 5rem;
+   background-color: var(--pure-white);
+   border: 0.2rem solid var(--sky-blue);
+   top: 0;
+   left: -0.9rem;
+}
+
+/*.resume-item:nth-of-type(3)::before{
+   top: 3.3rem;
+}
+
+.resume-item-1::before{
+   top: 3.5rem;
+}
+<!-- Incase you will be added more than one column
+ this last two style is palce the that blue round in a new column 
+ and also add mb-0 in the class--> */
+
+ .resume-item .year{
+   font-size: var(--p-font);
+ }
+ 
+ /* imp! section-5 (services section) */
+
+ .service-item{
+   padding: 6rem 3rem;
+   box-shadow: 0 0.5rem 9rem 0 color-mix(in srgb, var(--grey), transparent 90%);
+   border-bottom: 0.5rem solid var(--pure-white);
+   border-radius: 1.8rem;
+   transition: all 0.3s ease-in-out;
+ }
+
+.service-item .icon{
+   color: var(--pure-white);
+   background: var(--sky-blue);
+   width: 6.4rem;
+   height: 6.4rem;
+   border-radius: 5rem;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-bottom: 2rem;
+   font-size: var(--font-20px);
+
+}
+
+.service-item h4{
+   margin: 1rem 0 1.5rem;
+}
+ 
+.service-item:hover{
+   transform: translateY(-1rem);
+   border-color: var(--sky-blue);
+   cursor: pointer;
+}
+/* imp! section-6 (acheivement-section) */
+.acheivement-section{
+   background:url(image/image2.webp);
+   background-size: cover;
+   padding: 15rem;
+   position:relative;
+   z-index: 0;
+}
+.acheivement-section .overlay{
+   position: absolute;
+   content: '';
+   top:0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-color: color-mix(in srgb,var(--sky-blue),transparent 40%);
+   z-index: -1;
+}
+.acheivement-section span{
+   font-size: 4.5rem;
+   color: var(--pure-white);
+   font-weight: 600;
+}
+
+/* imp! section-7 (skill-section) */
+
+.skills-container {
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+
+    .skill-icon {
+      display: inline-block;
+      text-align: center;
+      padding: 10px;
+      min-width: 100px;
+    }
+
+    .skill-icon i {
+      font-size: 2rem;
+      color: #007bff;
+    }
+
+    @media (min-width: 768px) {
+      .skills-container {
+        white-space: normal;
+        overflow-x: unset;
+      }
+
+      .skill-icon {
+        width: auto;
+      }
+    }
+
+    /* imp! section-8 (portfolio-section) */
+
+   .project-card {
+      position: relative;
+      width: 300px;
+      overflow: hidden;
+    }
+
+   .project-card img {
+      width: 100%;
+      display: block;
+    }
+
+   .project-card .overlay {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      color: var(--pure-white);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      padding: 20px;
+      box-sizing: border-box;
+   }
+
+   .project-card:hover .overlay {
+      opacity: 1;
+   }
+
+   /* imp! section-9 (contact-section) */
+
+   form{
+      box-shadow: 0 0 2rem color-mix(in srgb, var(--grey), transparent 75%);
+   }
+   
+   input,textarea,.submit-btn{
+      font-size: var(--p-font) !important ;
+   }
+
+   ::placeholder{
+      opacity: 0.5 !important;
+   }
+   .contact-section textarea{
+      resize: none;
+   }
+
+   .submit-btn{
+      padding: 1rem 3rem;
+      background-color: var(--sky-blue);
+      color: var(--pure-white);
+      opacity: 0.75;
+      transition: 0.5s;
+   }
+
+   .submit-btn:hover{
+      background-color: var(--sky-blue);
+      color: var(--pure-white);
+      opacity: 1;
+   }
+   .thank-you-msg{
+      font-family: var(--font-segoe-UI);
+      display: none;
+   }
+
+   /* imp! section-10 (footer-section) */
+
+   .footer-section{
+      background-color: var(--sky-blue);
+      padding: 5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+   }
+
+   .social-icons{
+      display: flex;
+      gap: 2rem;
+   }
+
+   .social-icons i{
+      color: var(--pure-white);
+      font-size: 1.8rem;
+      width: 5rem;
+      height: 5rem;
+      border: 0.1rem solid var(--pure-white);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 100%;
+      cursor: pointer;
+      opacity: 0.75;
+      transition: 0.5s;
+   }
+.social-icons i:hover{
+   opacity: 2;
+
+}
+
+/*  imp! Media Queries  */
+
+/*  imp! Tablet Screen  */
+
+@media (max-width :992px){
+   /* imp! Css Varaible Declaration */
+   :root{
+      --h1-font: 5rem;
+      --h2-font: 3rem;
+   }
+
+
+/* imp! Body and Common Css */
+
+.mt-100{
+   margin-top: 8rem;
+}
+
+.mb-35{
+   margin-bottom: 3.5rem;
+}
+/* Nav-Bar Css */
+.nav-link:hover::before, .nav-line.active::before{
+   visibility: hidden;
+}
+}
+
+/* Mobile Screen */
+@media (max-width : 600px){
+   /* imp! Css Variable Declaration */
+   :root{
+      --h1-font:3.5rem;
+      --h2-font:2.2rem;
+      --h3-font:2rem;
+      
+   }
+   /* imp! Body and Common Css */
+   .mt-100{
+      margin-top: 7rem;
+   }
+   .about-section{
+      padding: 0;
+   }
+   /* imp! section-1 (Hero-Section) */
+   .hero-section{
+      background-position: -10rem;
+   }
+   /* imp! Achievements Section */
+   .acheivement-section{
+      padding: 5rem;
+   }
+   /* imp section-9 (footer-Section) */
+   .footer-section{
+      padding: 3rem;
+   }
+   .copyrigth-txt{
+      font-size: 1.4rem;
+   }
+   .social-icons i{
+      width: 4rem;
+      height: 4rem;
+      font-size: 1.4rem;
+   }
+}
+
+
