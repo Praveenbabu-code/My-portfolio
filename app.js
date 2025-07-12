@@ -24,12 +24,21 @@ window.onscroll = () => {
 
 // imp! eamil js script
 
-document.getElementById('contact-form').addEventListener('submit',(e)=>{
-    e.preventDefault()
-    let params = {
-        form_name: document.getElementById('full_name').Value,
-        eamil_id: document.getElementById('email_id').Value,
-        message: document.getElementById('message').Value
-    }
-    
-})
+document.getElementById('contact-form').addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  let params = {
+    from_name: document.getElementById('full_name').value,
+    email_id: document.getElementById('email_id').value,
+    message: document.getElementById('message').value
+  };
+
+  emailjs.send("SERVICE_ID", "TEMPLATE_ID", params)
+    .then(() => {
+      alert("Message sent successfully!");
+    })
+    .catch((error) => {
+      console.error("EmailJS error:", error);
+      alert("Failed to send message. Please try again.");
+    });
+});
